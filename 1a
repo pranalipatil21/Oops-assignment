@@ -1,0 +1,10 @@
+//assignment1a
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+int main(){
+    cout<<"Alexa"<<setw(8)<<"999"<<endl<<"Alexander"<<setw(8)<<"12345"<<endl<<"Dora"<<setw(8)<<"286495";
+    return 0;
+}
