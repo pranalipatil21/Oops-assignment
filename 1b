@@ -1,0 +1,14 @@
+//assignment1b
+#include<iostream>
+using namespace std;
+
+int main(){
+    float gallons;
+    double cufeet;
+    cout<<"Enter the number of gallons";
+    cin>>gallons;
+// 1cufeet = 7.481gallons
+    cufeet = gallons/7.481;
+    cout<<cufeet;
+    return 0;
+}
