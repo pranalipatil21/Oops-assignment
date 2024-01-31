@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+class employee{
+int id,age;
+float salary,da,hra,total;
+string name,post;
+
+public:
+void input();
+void show();
+void da_hra();
+employee();
+};
+
+void employee::input(){
+cout<<"enter the employee data";
+cin>>id>>name>>age>>post>>salary;
+}
+
+void employee::show(){
+cout<<id<<endl<<name<<endl<<age<<endl<<post<<endl<<salary<<endl;
+}
+
+void employee::da_hra(){
+
+cout<<"enter the values of hra and da"<<endl;
+cin>>da>>hra;
+total = hra + da + salary;
+cout<<"total salary of employee is "<<total<<endl;	
+}
+
+employee :: employee(){
+id = 111;
+name = "pccoe";
+age = 20;
+post = "Faculty";
+salary = 250000;
+hra = 2000;
+da = 1500;
+
+}
+
+int main(){
+    employee e1;
+    e1.input();
+    e1.show();
+    e1.da_hra();
+    return 0;
+}
