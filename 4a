@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+const int size=10;
+class sort{
+    int n;
+    int arr[5];
+    int i,j;
+    public:
+    void read();
+    void show();
+    void sorted();
+    void sortdec();
+
+};
+void sort::read(){
+    cout<<"enter the size of array";
+    cin>>n;
+    cout<<"enter the elements of array"<<'\t';
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+    }
+}
+void sort::show(){
+    cout<<"display the elements of array"<<'\t';
+    for(i=0;i<n;i++){
+       cout<<arr[i]<<"\t";
+    }
+}
+
+void sort::sorted(){
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                int temp;
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+       
+    }
+     cout<<endl<<"sorted array:"<<"\t";
+}
+
+void sort::sortdec(){
+    for(i=0;i<n;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]<arr[j]){
+                int temp;
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+       
+    }
+     cout<<endl<<"sorted array:"<<"\t";
+        
+}
+
+int main(){
+  sort a1;
+  a1.read();
+  a1.show();
+  a1.sorted();
+  a1.show();
+  a1.sortdec();
+  a1.show();
+    
+    return 0;
+}
