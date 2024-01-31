@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class sample
+{
+ int f=0, s=1, t, n, i;
+public:
+sample(){
+    f=0;
+    s=1;
+    t=0;
+}
+~sample(){
+    cout<<"Destructor is called";
+}
+void fibo()
+{
+       cout<<"Enter the no. of sequence";
+         cin>>n;
+         cout<<"\t"<<"Fibonacci sereis :"<<"\t";
+         cout<<f<<"\t"<<s<<"\t";
+         for(i=2; i<=n; i++){
+            t=f+s;
+            cout<<t<<"\t";
+            f=s;
+            s=t;
+         }    
+}     
+};
+
+int main(){
+   sample o1;
+   o1.fibo();
+
+    return 0;
+}
