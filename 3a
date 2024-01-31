@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+class prime_or_not{
+public:
+int i, num, n, count;
+void input(){
+
+
+   cout<<"Enter the range: ";
+   cin>>n;
+   cout<<"The prime numbers in between the range 1 to "<<n<<endl;
+   
+}
+void prime(){
+ for(num = 1;num<=n;num++){
+      int count = 0;
+      for(int i=2;i<=num/2;i++){
+         if(num%i==0){
+            count++;
+         break;
+      }
+   }
+   if(count==0 && num!= 1)
+      cout<<num<<'\t';
+   }
+
+}
+
+void prime_not(){
+
+  int  m=0, flag=0;  
+  cout << "Enter the Number to check Prime: ";  
+  cin >> num;  
+  if(num == 1 || num ==0) {
+      flag = 1;
+      cout<<"No"<<endl;
+  }
+  for(i = 2; i <= num/2; i++)  
+  {  
+      if(num % i == 0)  
+      {  
+          cout<<"NO"<<endl;  
+          flag=1;  
+          break;  
+      }  
+  }  
+  if (flag==0)  
+      cout << "YES"<<endl;  
+}
+
+
+
+};
+
+int main(){
+   prime_or_not o1;
+   o1.input();
+   o1.prime();
+   o1.prime_not();
+   return 0;
+}
