@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+class record
+{
+     int n,sum=0,rem;
+    public:
+    void digitsum(){
+    cin>>n;
+    while(n>0){
+    sum = sum + n%10;
+    n = n/10;
+    }
+    cout<<sum;
+
+}
+};
+int main(){
+   record o1;
+   o1.digitsum();
+
+   
+    return 0;
+}
