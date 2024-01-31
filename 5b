@@ -1,0 +1,103 @@
+// c++ program of bank details
+#include <iostream>
+using namespace std;
+class Bank
+{
+    string name_of_depositer,account_type;
+    int account_no;
+    float account_balance;
+   
+    public:
+    Bank()
+    {
+        cout<<"default constructor"<<endl;
+        name_of_depositer=account_type="NULL";
+        account_no=00;
+        account_balance=0.0;
+    }
+    Bank(Bank &x);
+    Bank(string n,string t,int a,float b);
+    void input();
+    void deposit();
+    void withdraw();
+    void display();
+   
+};
+Bank::Bank(Bank &x){
+        cout<<"copy constructor"<<endl;
+        name_of_depositer=x.name_of_depositer;
+        account_type=x.account_type;
+        account_no=x.account_no;
+        account_balance=x.account_balance;
+}
+Bank::Bank(string n,string t,int a,float b){
+        cout<<"parametarized constructor"<<endl;
+        name_of_depositer =n;
+        account_type=t;
+        account_no=a;
+    }
+void Bank::input(){
+    cout<<"enter customer details"<<endl;
+    cout<<"enter customer name";
+    cin>>name_of_depositer;
+    cout<<"enter the type of account"<<endl;
+    cin>>account_type;
+    cout<<"enter the accont number"<<endl;
+    cin>>account_no;
+}
+void Bank::deposit(){
+    int amt_dep;
+    cout<<"enter the amount to be deposited";
+    cin>>amt_dep;
+    account_balance=account_balance+amt_dep;
+    cout<<"the current balance is"<<"\t"<<account_balance;
+}
+void Bank::withdraw(){
+    int amt_with;
+    cout<<"enter the amount to be withdraw";
+    cin>>amt_with;
+    account_balance=account_balance-amt_with;
+    cout<<"the current balance is"<<"\t"<<account_balance;
+   
+}    
+
+void Bank::display(){
+        cout<<name_of_depositer<<"\t"<<account_type<<"\t"<<account_no<<"\t"<<account_balance<<"\t";
+    }
+int main()
+{
+  Bank b1;
+  int ch;
+  char choice;
+ 
+ do
+ {
+     cout<<"enter your choice";
+     cin>>ch;
+     switch(ch)
+     {
+         case 1:
+         b1.input();
+         break;
+         case 2:
+         b1.deposit();
+         break;
+         case 3:
+         b1.withdraw();
+         break;
+         case 4:
+         b1.display();
+         break;
+         // default
+         
+     }
+     cout<<"do you want to continue Yes/No";
+     cin>>choice;
+     
+ }while(choice=='Y'||'y');
+ 
+ return 0;
+ 
+}
+
+   
