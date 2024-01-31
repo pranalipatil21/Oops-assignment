@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class max_min{
+public:
+int arr[100], n, i, max, min;
+ void input(){  
+    cout<<"enter the size of array :"<<endl;
+    cin>>n;
+    cout<<"enter the elements of the array: "<<endl;
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    }
+void display(){
+    for(i=0;i<n;i++){
+        cout<<arr[i]<<'\t';
+    }cout<<endl;
+}
+void Maximum(){
+ max= arr[0];
+    for(i=0;i<n;i++){
+        if(max<arr[i])
+        max= arr[i];
+    }
+     cout<<" largest element: "<<max<<endl;
+}
+void Minimum(){
+ min= arr[0];
+    for(i=0;i<n;i++){
+        if(min>arr[i])
+        min= arr[i];
+    }
+    cout<<"Smallest element: "<<min<<endl;
+}
+};
+
+int main(){
+    max_min o1;
+    o1.input();
+    o1.display();
+    o1.Maximum();
+    o1.Minimum();
+
+    return 0;
+}
